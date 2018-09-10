@@ -145,7 +145,7 @@ nav h1 a {
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
-  margin: 0;
+  margin: auto;
   padding: 2em 1em 2em;
   text-align: center;
 	display: grid;
@@ -285,4 +285,44 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	#restaurants-list {
+		grid-template-columns: 1fr 1fr;
+	}
+	.filter-options select {
+		font-size: 8pt;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 600px) {
+	#restaurants-list {
+		grid-template-columns: 1fr 1fr;
+	}
+	.filter-options select {
+		font-size: 5pt;
+	}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 468px) {
+	#restaurants-list {
+		grid-template-columns: 1fr;
+	}
+	#restaurants-list, #restaurants-list li{
+		width: 100%;
+		margin: 4px;
+		padding: 0;
+	}
+	.filter-options select {
+		font-size: 2pt;
+	}
 }
