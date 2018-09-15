@@ -80,25 +80,34 @@ fetchRestaurantFromURL = (callback) => {
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
+  const div = document.createElement('div');
+  const container = document.getElementById('restaurant-container');
+
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
-
-  const address = document.getElementById('restaurant-address');
-  address.innerHTML = restaurant.address;
+  container.appendChild(name);
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  container.appendChild(image);
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
+  container.appendChild(cuisine);
+
+  const address = document.getElementById('restaurant-address');
+  address.innerHTML = restaurant.address;
+  container.appendChild(address);
 
   // fill operating hours
   if (restaurant.operating_hours) {
-    fillRestaurantHoursHTML();
+    const hours = fillRestaurantHoursHTML();
+    container.appendChild(hours);
   }
   // fill reviews
-  fillReviewsHTML();
+  const reviews = fillReviewsHTML();
+  container.appendChild(reviews);
 }
 
 /**
@@ -119,6 +128,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     hours.appendChild(row);
   }
+  return hours;
 }
 
 /**
@@ -141,6 +151,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
     ul.appendChild(createReviewHTML(review));
   });
   container.appendChild(ul);
+  return container;
 }
 
 /**
