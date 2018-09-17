@@ -67,7 +67,7 @@ footer{
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
-  height: 40px;
+  height: auto;
   background-color: #252831;
   text-align:center;
 }
@@ -206,11 +206,11 @@ nav h1 a {
   width: 100%;
 	display: flex;
   flex-direction: column;
+	min-height: 100%;
 }
 #maincontent-detail {
 	display: grid;
-	grid-column-gap: 15px;
-	grid-template-columns: 1fr 1fr
+	grid-template-columns: 60% 40%;
 }
 .inside header {
   width: 100%;
@@ -218,10 +218,8 @@ nav h1 a {
 }
 #maincontent-detail #map-container {
   background: blue none repeat scroll 0 0;
-  height: 50%;
-  position: absolute;
-  right: 0;
-  width: 50%;
+  height: 40%;
+  grid-column: 2;
 }
 #maincontent-detail #map {
   background-color: #ccc;
@@ -237,6 +235,7 @@ nav h1 a {
   margin: 15px 0 5px;
   text-transform: uppercase;
   line-height: 1.1;
+	text-align: left;
 }
 #restaurant-img {
 	width: 90%;
@@ -267,6 +266,7 @@ nav h1 a {
 	display: flex;
   flex-direction: column;
 	padding-left: 5%;
+	grid-column: 1;
 }
 #reviews-container {
 	border-bottom: 1px solid #d9d9d9;
@@ -314,6 +314,8 @@ nav h1 a {
 	text-align: left;
 	font-weight: normal;
 	padding: 20px;
+	color: #735454;
+	font-size: 11pt;
 }
 #restaurant-hours td {
   color: #666;
@@ -345,6 +347,9 @@ nav h1 a {
 	.filter-options select {
 		font-size: 5pt;
 	}
+	#maincontent-detail #map-container {
+		height: 25%;
+	}
 }
 
 /* Custom, iPhone Retina */
@@ -359,5 +364,30 @@ nav h1 a {
 	}
 	.filter-options select {
 		font-size: 2pt;
+	}
+	#maincontent-detail {
+		grid-template-columns: auto;
+		grid-template-rows: 16% auto;
+	}
+	#restaurant-container {
+		grid-row: 2;
+		background-color: #ddd;
+	}
+	#maincontent-detail #map-container {
+		grid-row: 1;
+	}
+	#maincontent-detail #map {
+		position: absolute;
+		right: 0;
+		height: 15%;
+		margin:0;
+		padding:0;
+	}
+	#footer {
+		position: fixed;
+	}
+	#restaurant-hours td, #breadcrumb li,
+	#reviews-list li #review-comments {
+		font-size: 12pt;
 	}
 }
