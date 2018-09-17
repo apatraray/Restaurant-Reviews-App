@@ -46,10 +46,17 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   background-color: #f3f3f3;
   min-height: 100%;
 }
-#main-container, #maincontent{
+#maincontent, #main-container {
 	display: grid;
 	grid-row-gap: 5px;
-	grid-column-gap: 5px;
+	grid-template-columns: auto;
+	grid-auto-flow: row;
+}
+#maincontent {
+	grid-template-rows: 20% auto;
+}
+#main-container {
+	grid-template-rows: 3% auto;
 }
 footer{
   background-color: #444;
@@ -113,7 +120,7 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #map {
-  height: 400px;
+	height:70vh;
   width: 100%;
   background-color: #ccc;
 }
@@ -149,7 +156,6 @@ nav h1 a {
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
-  margin: auto;
   padding: 1em;
   text-align: center;
 	display: grid;
