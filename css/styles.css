@@ -48,12 +48,11 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #maincontent, #main-container {
 	display: grid;
-	grid-row-gap: 5px;
 	grid-template-columns: auto;
 	grid-auto-flow: row;
 }
 #maincontent {
-	grid-template-rows: 20% auto;
+	grid-template-rows: 15% auto;
 }
 #main-container {
 	grid-template-rows: 3% auto;
@@ -67,7 +66,7 @@ footer{
 	bottom:0;
 	width: 100%;
   position: relative;
-	margin-top: 15px;
+	margin-top: 1px;
 	text-align: -webkit-center;
 }
 
@@ -119,8 +118,8 @@ nav h1 a {
     text-decoration: underline;
 }
 /* ====================== Map ====================== */
-#map {
-	height:70vh;
+#map-container #map {
+	height:50vh;
   width: 100%;
   background-color: #ccc;
 }
@@ -160,6 +159,8 @@ nav h1 a {
   text-align: center;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	place-content: start;
+	padding: 10px 0 20px;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -289,7 +290,7 @@ nav h1 a {
 }
 #reviews-list {
   margin: 0;
-  padding: 0;
+	padding: 0 0 30px;
 }
 #reviews-list li {
   background-color: #fff;
@@ -330,11 +331,18 @@ nav h1 a {
 #restaurant-hours {
 	width: 90%;
 }
-/* Medium Devices, Desktops
-@media only screen and (max-width : 992px) {
 
+@media only screen and (max-width : 1025px) {
+#map-container #map {
+	height: 25vh;
 }
-*/
+}
+/* Medium Devices, Desktops*/
+@media only screen and (max-width : 992px) {
+#map-container #map {
+	height: 40vh;
+}
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 	#restaurants-list {
@@ -356,10 +364,19 @@ nav h1 a {
 	#maincontent-detail #map-container {
 		height: 25%;
 	}
+	#map-container #map {
+		height: 60vh;
+	}
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 468px) {
+	#maincontent {
+    grid-template-rows: 10% auto;
+	}
+	#main-container {
+    grid-template-rows: 2% auto;
+	}
 	#restaurants-list {
 		grid-template-columns: 1fr;
 	}
@@ -367,6 +384,9 @@ nav h1 a {
 		width: 100%;
 		margin: 4px;
 		padding: 0;
+	}
+	#restaurants-list {
+		padding: 0 0 50px;
 	}
 	.filter-options select {
 		font-size: 2pt;
@@ -395,5 +415,10 @@ nav h1 a {
 	#restaurant-hours td, #breadcrumb li,
 	#reviews-list li #review-comments {
 		font-size: 12pt;
+	}
+}
+@media only screen and (max-width : 320px) {
+	#map-container #map {
+    height: 70vh;
 	}
 }
