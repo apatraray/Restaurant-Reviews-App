@@ -42,6 +42,15 @@ h1, h2, h3, h4, h5, h6 {
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+.skip-link {
+	left: -20px;
+	text-align: left;
+	width:fit-content;
+}
+.skip-link:focus {
+	background: #ea515d;
+	color: white;
+}
 #maincontent, #maincontent-detail {
   background-color: #f3f3f3;
   min-height: 100%;
@@ -52,7 +61,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	grid-auto-flow: row;
 }
 #maincontent {
-	grid-template-rows: 15% auto;
+	grid-template-rows: auto 15% auto;
 }
 #main-container {
 	grid-template-rows: 3% auto;
@@ -126,17 +135,20 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
-  height: 70px;
-  background-color: #3397DB;
+  height: 75px;
+  background-color: #47a1de;
   align-items: center;
 	position: relative;
+	display: inline-block;
+	padding-top: 5px;
 }
 .filter-options h2 {
-  color: white;
+  color: #c11826;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
   margin: 0 20px;
+	width: 100%;
 }
 .filter-options select {
   background-color: white;
@@ -149,6 +161,21 @@ nav h1 a {
   padding: 0 10px;
 	position: relative;
 	color: #666;
+}
+.filter-options select:focus {
+	background: #e89f9f;
+	color: #333;
+}
+#neighborhoods {
+	left: 0;
+	text-align: left;
+	width: 50%;
+	display: inline-block;
+}
+#cuisines {
+	right: 0;
+	text-align: right;
+	display: inline-block;
 }
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
@@ -194,7 +221,7 @@ nav h1 a {
   font-size: 11pt;
 	color: #666;
 }
-#restaurants-list li a {
+#restaurants-list li button{
   background-color: #c16e0d;
   border-bottom: 3px solid #eee;
   color: #fff;
@@ -205,8 +232,8 @@ nav h1 a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+	cursor: pointer;
 }
-
 /* ====================== Restaurant Details ====================== */
 .inside {
   width: 100%;
@@ -242,6 +269,9 @@ nav h1 a {
   text-transform: uppercase;
   line-height: 1.1;
 	text-align: left;
+}
+#restaurant-name:focus {
+	width:fit-content;
 }
 #restaurant-img {
 	width: 90%;
@@ -365,7 +395,7 @@ nav h1 a {
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 468px) {
 	#maincontent {
-    grid-template-rows: 10% auto;
+    grid-template-rows: auto 10% auto;
 	}
 	#main-container {
     grid-template-rows: 3% auto;
