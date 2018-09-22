@@ -9,9 +9,9 @@ This app can be accessed using index.html after downloading the file from (https
 ## Running using local machine
 
 ### Running
+local client server can be run by following command:
+  python3 -m http.server 8000
 
-```python3 -m http.server 8000
-```
 
 ### Using the app
 
