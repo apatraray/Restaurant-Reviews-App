@@ -174,23 +174,17 @@ createRestaurantHTML = (restaurant) => {
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
   li.append(address);
-/*
-  const more = document.createElement('a');
-  const btn = document.createElement('button');
-  btn.className = 'link';
-  btn.innerHTML = 'View Details';
-  more.href = DBHelper.urlForRestaurant(restaurant);
-  more.append(btn);
-  li.append(more)
-*/
   const btn = document.createElement('button');
   var newLink = DBHelper.urlForRestaurant(restaurant);
+  var viewDetailLink = "click to view detail of restaurant " + restaurant.name;
+  btn.setAttribute("id", "viewDetail");
+  btn.setAttribute("role", "button");
+  btn.setAttribute("aria-label", viewDetailLink);
   btn.className = 'link';
   btn.innerHTML = 'View Details';
   btn.onclick = function() {
     window.location.href = newLink;
   };
-  /*btn.setAttribute("onclick", "window.location.replace = " + newLink + "");*/
   li.append(btn);
 
   return li

@@ -97,34 +97,34 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    list-style: none;
-    background-color: #eee;
-    font-size: 17px;
-    margin: 0;
-    width: 97.5%;
-		height: 1.5em;
-		padding-inline-start: 0;
-		padding-left: 2.5%;
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+  margin: 0;
+  width: 97.5%;
+	height: 1.5em;
+	padding-inline-start: 0;
+	padding-left: 2.5%;
 }
 /* Display list items side by side */
 #breadcrumb li {
-    display: inline;
+  display: inline;
 }
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
 }
 /* Add a color to all links inside the list */
 #breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
+  color: #0275d8;
+  text-decoration: none;
 }
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
-    color: #01447e;
-    text-decoration: underline;
+  color: #01447e;
+  text-decoration: underline;
 }
 /* ====================== Map ====================== */
 #map-container #map {
@@ -379,7 +379,6 @@ nav h1 a {
 		grid-template-columns: 1fr 1fr;
 	}
 }
-
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 600px) {
 	#restaurants-list {
@@ -392,7 +391,6 @@ nav h1 a {
 		height: 60vh;
 	}
 }
-
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 468px) {
 	#maincontent {
@@ -441,7 +439,7 @@ nav h1 a {
 		font-size: 12pt;
 	}
 }
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width : 330px) {
 	#maincontent #map-container #map {
     height: 70vh;
 	}
