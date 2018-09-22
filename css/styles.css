@@ -147,8 +147,8 @@ nav h1 a {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px;
 	width: 100%;
+	margin:0;
 }
 .filter-options select {
   background-color: white;
@@ -176,6 +176,7 @@ nav h1 a {
 	right: 0;
 	text-align: right;
 	display: inline-block;
+	width: 40%;
 }
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {

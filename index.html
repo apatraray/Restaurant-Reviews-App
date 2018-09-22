@@ -48,6 +48,13 @@
   <footer id="footer">
     Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
   </footer>
+  <script>
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker
+               .register('/sw.js')
+               .then(function() { console.log("Service Worker Registered");
+             }).catch(function(err){console.log("Service Worker is not Registered");});
+    }
+  </script>
 </body>
-
 </html>
