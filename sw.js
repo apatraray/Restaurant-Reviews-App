@@ -1,4 +1,4 @@
-var newCacheName = 'restaurant-review';
+var newCacheName = 'restaurants-review';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -41,7 +41,7 @@ self.addEventListener('activate', function(event) {
     caches.keys().then(function(cacheNames) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
-          return cacheName.startsWith('restaurant') &&
+          return cacheName.startsWith('restaurants') &&
                  cacheName != newCacheName;
         }).map(function(cacheName) {
           return caches.delete(cacheName);
